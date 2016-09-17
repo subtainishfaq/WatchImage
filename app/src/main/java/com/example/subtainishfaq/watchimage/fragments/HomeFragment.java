@@ -19,12 +19,11 @@ package com.example.subtainishfaq.watchimage.fragments;
         import com.example.subtainishfaq.watchimage.Fullscreen;
         import com.example.subtainishfaq.watchimage.R;
         import com.example.subtainishfaq.watchimage.adapters.GridViewAdapter;
-        import com.example.subtainishfaq.watchimage.utility.Cons;
+        import com.example.subtainishfaq.watchimage.utility.Basic_Properties;
         import com.example.subtainishfaq.watchimage.utility.GlobalSettings;
         import com.example.subtainishfaq.watchimage.utility.TinyDB;
         import com.googlecode.flickrjandroid.Flickr;
         import com.googlecode.flickrjandroid.FlickrException;
-        import com.googlecode.flickrjandroid.photos.Photo;
         import com.googlecode.flickrjandroid.photos.PhotoList;
 
         import org.json.JSONException;
@@ -200,7 +199,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
         int numberOfPages;
         @Override
         protected ArrayList<String> doInBackground(String... params) {
-            Flickr f=new Flickr(Cons.FlickerApi);
+            Flickr f=new Flickr(Basic_Properties.FlickerApi);
             loading=false;
             PhotoList ph=null;
             try {
@@ -271,7 +270,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
         @Override
         protected ArrayList<String> doInBackground(Integer... params) {
             loading=false;
-            Flickr f=new Flickr(Cons.FlickerApi);
+            Flickr f=new Flickr(Basic_Properties.FlickerApi);
             PhotoList ph=null;
 
 //
@@ -281,7 +280,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                 {
 
 
-                ph=f.getPeopleInterface().getPublicPhotos(Cons.UserFlicker,6,1);//pages
+                ph=f.getPeopleInterface().getPublicPhotos(Basic_Properties.UserFlicker,6,1);//pages
 
                     Log.d(" Scrolling","executing"+ params[0]);
                 for (int i=0; i<ph.size();i++)
@@ -295,9 +294,9 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                 // int numberOfPAges= ph.getPages();
 
 
-                    if(params[0]<=f.getPeopleInterface().getPublicPhotos(Cons.UserFlicker,6,1).getPages() && params[0]!=1)
+                    if(params[0]<=f.getPeopleInterface().getPublicPhotos(Basic_Properties.UserFlicker,6,1).getPages() && params[0]!=1)
                     {
-                        ph=f.getPeopleInterface().getPublicPhotos(Cons.UserFlicker,6,params[0]);
+                        ph=f.getPeopleInterface().getPublicPhotos(Basic_Properties.UserFlicker,6,params[0]);
 
                         for (int j = 0; j<ph.size(); j++)
                         {
