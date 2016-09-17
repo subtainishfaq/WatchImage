@@ -1,0 +1,70 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include layout="@layout/appbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+
+        >
+
+       <!-- <com.android.volley.ui.NetworkImageViewPlus
+            android:id="@+id/imageFullScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true" />
+-->
+
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            />
+        <LinearLayout android:id="@+id/footer" android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal"
+            android:gravity="end"
+
+            android:layout_alignParentBottom="true"
+            android:background="#53247889">
+
+            <ImageButton android:id="@+id/whatsbutton" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/float_transparent"
+                android:layout_gravity="left"
+                android:layout_margin="2dp"
+                android:src="@drawable/whats"
+                />
+
+            <ImageButton android:id="@+id/fbbutton" android:layout_width="wrap_content"
+                android:src="@drawable/facebook"
+                android:background="@color/float_transparent"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+
+                android:layout_height="wrap_content"
+                 />
+
+            <ImageButton android:id="@+id/normalshare" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/share"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:background="@color/float_transparent"
+                 />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
