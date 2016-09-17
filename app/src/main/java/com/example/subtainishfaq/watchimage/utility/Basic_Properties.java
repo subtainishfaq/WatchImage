@@ -8,3 +8,4 @@ public class Basic_Properties {
   public static String  FlickerApi = "8a0e22356444a0656760e91af70cf4d1";
 
 }
+

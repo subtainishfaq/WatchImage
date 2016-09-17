@@ -23,6 +23,7 @@ import com.example.subtainishfaq.watchimage.R;
 
 import com.example.subtainishfaq.watchimage.adapters.CustomListAdapter;
 import com.example.subtainishfaq.watchimage.adapters.GridViewAdapter;
+import com.example.subtainishfaq.watchimage.utility.Basic_Properties;
 import com.example.subtainishfaq.watchimage.utility.GlobalSettings;
 import com.example.subtainishfaq.watchimage.utility.TinyDB;
 import com.googlecode.flickrjandroid.Flickr;
@@ -203,7 +204,7 @@ public class CategoryFragment extends Fragment implements AdapterView.OnItemClic
 String Prams;
         @Override
         protected ArrayList<String> doInBackground(String... params) {
-            Flickr f=new Flickr(Cons.FlickerApi);
+            Flickr f=new Flickr(Basic_Properties.FlickerApi);
             PhotoList ph=null;
             try {
                 ph=f.getPhotosetsInterface().getPhotos(params[0], 8, 1).getPhotoList();//pages
@@ -215,8 +216,7 @@ String Prams;
                     ph.addAll(f.getPhotosetsInterface().getPhotos(params[0], 8, i).getPhotoList());
                 }
                 Log.d("group",params[0]);
-                //get pages
-                //get perpage
+
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -261,10 +261,10 @@ String Prams;
         @Override
         protected ArrayList<String> doInBackground(Void... params) {
 
-            Flickr f=new Flickr(Cons.FlickerApi);
+            Flickr f=new Flickr(Basic_Properties.FlickerApi);
             Photosets groupList=null;
             try {
-                groupList=  f.getPhotosetsInterface().getList(Cons.UserFlicker);
+                groupList=  f.getPhotosetsInterface().getList(Basic_Properties.UserFlicker);
                 groupLista=new ArrayList<Photoset>(groupList.getPhotosets());
                 grouids=new ArrayList<String>();
 

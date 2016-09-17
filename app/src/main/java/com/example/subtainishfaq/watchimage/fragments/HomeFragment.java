@@ -290,7 +290,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
 
                 }
                 }
-//                ph=f.getPeopleInterface().getPublicPhotos(Cons.UserFlicker,6,1);
+//                ph=f.getPeopleInterface().getPublicPhotos(Basic_Properties.UserFlicker,6,1);
                 // int numberOfPAges= ph.getPages();
 
 

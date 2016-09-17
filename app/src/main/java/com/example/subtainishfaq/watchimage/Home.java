@@ -37,6 +37,7 @@ import com.example.subtainishfaq.watchimage.adapters.GridViewAdapter;
 import com.example.subtainishfaq.watchimage.fragments.CategoryFragment;
 import com.example.subtainishfaq.watchimage.fragments.FavouriteFragment;
 import com.example.subtainishfaq.watchimage.fragments.HomeFragment;
+import com.example.subtainishfaq.watchimage.utility.Basic_Properties;
 import com.example.subtainishfaq.watchimage.utility.CustomViewPager;
 import com.example.subtainishfaq.watchimage.utility.GlobalSettings;
 import com.example.subtainishfaq.watchimage.utility.TinyDB;
@@ -362,11 +363,11 @@ public class Home extends AppCompatActivity {
         @Override
         protected ArrayList<String> doInBackground(Void... params) {
 
-            Flickr f=new Flickr(Cons.FlickerApi);
+            Flickr f=new Flickr(Basic_Properties.FlickerApi);
             Photosets groupList=null;
 
             try {
-                groupList=  f.getPhotosetsInterface().getList(Cons.UserFlicker);
+                groupList=  f.getPhotosetsInterface().getList(Basic_Properties.UserFlicker);
                 groupLista=new ArrayList<Photoset>(groupList.getPhotosets());
                 grouids=new ArrayList<String>();
 
